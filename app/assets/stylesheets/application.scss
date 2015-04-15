@@ -43,7 +43,6 @@
 }
 
 .chapters {
-  @include grid-column(12);
   margin-left: 2rem;
 
   .chapters__chapter {
@@ -107,6 +106,8 @@ footer {
 }
 
 .book, .article {
+  @include grid-column(12);
+
   &__source {
     @include alert($bg: $info-color);
   }
