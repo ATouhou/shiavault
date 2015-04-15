@@ -8,7 +8,6 @@ html lang="en"
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
   body
@@ -20,4 +19,5 @@ html lang="en"
         .copyright
           | Please direct questions and comments to #{mail_to 'support@shiavault.com', nil, encode: 'javascript'}
 
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
     = render 'shared/analytics'
