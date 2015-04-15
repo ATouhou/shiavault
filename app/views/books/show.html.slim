@@ -1,0 +1,19 @@
+- content_for(:title, html_title(@book.title))
+
+.container
+  .book
+    header.header
+      h1= @book.title
+
+    = render partial: 'shared/downloads', locals: { ebook: @book }
+
+    .description
+      = @book.html_description
+
+    - message = @book.support_source_message
+    - if message.present?
+      .book__source= message
+
+    ol.chapters
+      - @book.chapters.each do |chapter|
+        li.chapters__chapter= link_to chapter.title, book_chapter_path(@book, chapter)

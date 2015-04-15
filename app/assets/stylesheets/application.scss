@@ -1,0 +1,117 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+@import "foundation_and_overrides";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Raleway:700);
+
+.container {
+  @include grid-row();
+  max-width: 37.5em;
+}
+
+.lg-container {
+  @include grid-row();
+}
+
+.article, .chapter {
+  @include grid-column(12);
+
+  h1 {
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid #E4E5E9;
+    margin-bottom: 2rem;
+  }
+}
+
+.list {
+  margin-bottom: 2rem;
+
+  &__row {
+    @include grid-column(12);
+  }
+}
+
+.chapters {
+  @include grid-column(12);
+  margin-left: 2rem;
+
+  .chapters__chapter {
+    padding-left: 0;
+  }
+}
+
+.header {
+  @include grid-column(12);
+
+  h1 {
+    padding: 2rem 0 1rem;
+  }
+}
+
+footer {
+  @extend .container;
+}
+
+.footer {
+  @include grid-column(12);
+
+  .copyright {
+    border-top: 1px solid #E4E5E9;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+.downloads {
+  @include button-group-container();
+
+  .mobi {
+    @include button($padding: $button-sml, $bg: $secondary-color);
+  }
+
+  .epub {
+    @include button($padding: $button-sml);
+  }
+
+  & > a {
+    @include button-group-style($radius: 4, $even: 2);
+  }
+}
+
+.chapter-navigation {
+  @include grid-row();
+
+  &__next, &__previous {
+    @include grid-column(6, $collapse: true);
+    min-height: 1px; // Allows width to kick in
+
+    a {
+      @include button($padding: $button-sml);
+    }
+  }
+
+  &__next {
+    text-align: right;
+  }
+}
+
+.book, .article {
+  &__source {
+    @include alert($bg: $info-color);
+  }
+}
+
+.global-notification {
+  @include alert($bg: $warning-color)
+}

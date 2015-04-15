@@ -1,0 +1,26 @@
+.lg-container
+
+  header.header
+    h1 Books
+
+    p.global-notification
+      | Shaivault.com is in beta and under active development! Please keep in mind books may not be in their
+      | cleanest state, and that bugs may exist. Thank you!
+
+.list.lg-container
+  - @books.each do |book|
+    .list__row
+      .list__title
+        = link_to book.title, book_path(book)
+
+-# TODO: Disable displaying articles until MVP of books is established
+- unless Rails.env.production? || @articles.empty?
+  .lg-container
+    header.header
+      h1 Articles
+
+  .list.lg-container
+    - @articles.each do |article|
+      .list__row
+        .list__title
+          = link_to article.title, article_path(article)

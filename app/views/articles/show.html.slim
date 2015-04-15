@@ -1,0 +1,11 @@
+- content_for(:title, html_title(@article.title))
+
+.container
+  article.article
+    = render partial: 'shared/downloads', locals: { ebook: @article }
+
+    - message = @article.support_source_message
+    - if message.present?
+      .article__source= message
+
+    = @article.html_body
