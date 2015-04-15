@@ -4,7 +4,7 @@ feature 'ebooks' do
   let(:article) { 'The Truthful Stone' }
   let(:book) { 'Manner of Awaiting' }
 
-  scenario 'downloadable inside articles' do
+  xscenario 'downloadable inside articles' do
     visit '/'
     click_link article
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ArticleSearch do
+xdescribe ArticleSearch do
   it 'finds all articles' do
     articles = described_class.new.all
 
