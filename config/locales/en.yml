@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: "Shiavault"
+  home_title: Shiavault - a Vault of Shia Islamic Books
+  meta_description: >
+    Shiavault holds a variety of Shia Islamic books for in e-reader formats (epub/mobi)
+    to the benefit of Muslims and non-Muslims.
+  title: Shiavault
