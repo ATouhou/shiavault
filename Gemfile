@@ -42,6 +42,9 @@ gem 'slim-rails'
 # Enable plain e-mail display
 gem 'actionview-encoded_mail_to'
 
+gem 'sitemap_generator'
+gem 'fog', '~> 1.29'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
