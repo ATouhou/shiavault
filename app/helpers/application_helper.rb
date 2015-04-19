@@ -1,9 +1,12 @@
 module ApplicationHelper
   def meta_description
-    content_for?(:meta_description) ? yield(:meta_description) : t(:meta_description).strip
+    return unless content_for?(:meta_description)
+
+    description = h(content_for(:meta_description))
+    tag('meta', name: 'description', content: description).html_safe
   end
 
   def html_title(page = nil)
-    [t(:title), page].compact.join(' - ')
+    [t(:title), h(page)].compact.join(' - ')
   end
 end
