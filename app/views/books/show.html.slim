@@ -11,7 +11,7 @@
     .description
       = @book.html_description
 
-    - message = @book.support_source_message
+    - message = support_source_message(@book.source)
     - if message.present?
       .book__source= message
 

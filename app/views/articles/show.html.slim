@@ -4,7 +4,7 @@
   article.article
     = render partial: 'shared/downloads', locals: { ebook: @article }
 
-    - message = @article.support_source_message
+    - message = support_source_message(@article.source)
     - if message.present?
       .article__source= message
 
