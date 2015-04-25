@@ -9,9 +9,13 @@
       | Shaivault.com is in beta and under active development! Please keep in mind books may not be in their
       | cleanest state, and that bugs may exist. Thank you!
 
+.lg-container
+  .search
+    = search_field_tag 'search', 'Search'
+
 .list.lg-container
   - @books.each do |book|
-    .list__row
+    .list__row.list__book
       .list__title
         = link_to book.title, book_path(book)
 
@@ -23,6 +27,6 @@
 
   .list.lg-container
     - @articles.each do |article|
-      .list__row
+      .list__row.list__article
         .list__title
           = link_to article.title, article_path(article)
