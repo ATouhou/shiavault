@@ -63,6 +63,12 @@
   }
 }
 
+.comments {
+  @include grid-column(12);
+
+  padding-top: 1rem;
+}
+
 footer {
   @extend .container;
 }

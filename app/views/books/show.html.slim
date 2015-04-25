@@ -18,3 +18,6 @@
     ol.chapters
       - @book.chapters.each do |chapter|
         li.chapters__chapter= link_to chapter.title, book_chapter_path(@book, chapter)
+
+  .comments
+    = render 'shared/disqus'
