@@ -13,7 +13,7 @@
  *= require_self
  */
 @import "foundation_and_overrides";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans|Raleway:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Raleway:700);
 
 .container {
   @include grid-row();
