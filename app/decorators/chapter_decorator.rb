@@ -14,4 +14,7 @@ class ChapterDecorator < BaseDecorator
     h.link_to 'Previous', h.book_chapter_path(book, previous_chapter), class: 'previous' if previous_chapter
   end
 
+  def title
+    @model.title.present? ? @model.title : @model.slug
+  end
 end

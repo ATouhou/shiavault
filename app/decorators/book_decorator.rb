@@ -4,4 +4,7 @@ class BookDecorator < BaseDecorator
     MarkdownService.new.convert(description).html_safe
   end
 
+  def chapters
+    @model.chapters.map { |chapter| ChapterDecorator.new(chapter, @view) }
+  end
 end
