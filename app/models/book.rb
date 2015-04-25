@@ -3,6 +3,7 @@ class Book
 
   attr_accessor :uuid,
                 :title,
+                :subtitle,
                 :author,
                 :slug,
                 :description,

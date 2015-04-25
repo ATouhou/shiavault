@@ -1,5 +1,5 @@
 class Article < Page
-  attr_accessor :author
+  attr_accessor :author, :subtitle
 
   def epub_url
     EbookService.new.public_url("ebooks/articles/#{slug}.epub") if slug.present?

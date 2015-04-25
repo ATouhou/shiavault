@@ -28,4 +28,10 @@ feature 'online book reading' do
     click_link 'Next'
     expect(find('h1').text).to eq('Following the Imam of the Age')
   end
+
+  scenario 'able to read subtitle' do
+    visit '/books/islamic-laws'
+    subtitle = find('.subtitle').text
+    expect(subtitle).to start_with('According to the Fatawa')
+  end
 end

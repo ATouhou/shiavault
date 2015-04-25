@@ -3,7 +3,8 @@
 .container
   .book
     header.header
-      h1= @book.title
+      h1.title= @book.title
+      h2.subtitle= @book.subtitle if @book.subtitle
 
     = render partial: 'shared/downloads', locals: { ebook: @book }
 

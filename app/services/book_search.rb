@@ -32,11 +32,11 @@ class BookSearch
   end
 
   def chapter_params(metadata)
-    metadata.symbolize_keys.slice(:uuid, :title, :slug, :path, :source)
+    metadata.symbolize_keys.slice(:uuid, :title, :subtitle, :slug, :path, :source)
   end
 
   def book_params(metadata)
-    metadata.symbolize_keys.slice(:uuid, :title, :slug, :description, :author, :source)
+    metadata.symbolize_keys.slice(:uuid, :title, :subtitle, :slug, :description, :author, :source)
   end
 
   def metadata

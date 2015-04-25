@@ -53,8 +53,13 @@
 .header {
   @include grid-column(12);
 
-  h1 {
+  .title {
     padding: 2rem 0 1rem;
+  }
+  .subtitle {
+    padding: 0 0 1rem;
+    color: #666666;
+    font-size: 1.5rem
   }
 }
 
