@@ -131,3 +131,11 @@ footer {
 .global-notification {
   @include alert($bg: $warning-color)
 }
+
+.search {
+  @include grid-column(12);
+
+  input[type="search"] {
+    @include form-element;
+  }
+}
