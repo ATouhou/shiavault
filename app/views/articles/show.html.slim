@@ -1,16 +1,13 @@
 - content_for(:title, html_title(@article.title))
 
-.container
-  = render 'shared/header'
+article.article
+  = render partial: 'shared/downloads', locals: { ebook: @article }
 
-  article.article
-    = render partial: 'shared/downloads', locals: { ebook: @article }
+  - message = support_source_message(@article.source)
+  - if message.present?
+    .article__source= message
 
-    - message = support_source_message(@article.source)
-    - if message.present?
-      .article__source= message
+  = @article.html_body
 
-    = @article.html_body
-
-  .comments
-    = render 'shared/disqus'
+.comments
+  = render 'shared/disqus'

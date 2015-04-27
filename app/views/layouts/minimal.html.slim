@@ -13,11 +13,7 @@ html lang="en"
 
   body
 
-    .container
-      = render 'shared/header'
-      .full-space
-        == yield.force_encoding 'UTF-8'
-      = render 'shared/footer'
+    == yield.force_encoding 'UTF-8'
 
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = render 'shared/analytics'

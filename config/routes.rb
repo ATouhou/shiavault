@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'chapters/show'
-
-  get 'library/index'
-
-  get 'books/show'
-
   root 'library#index'
 
   resources :articles, only: [:show]
@@ -13,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get '/sitemap.xml', :to => 'seo#sitemap', :defaults => { :format => 'xml' }
+
+  get '/:id' => 'pages#show', as: 'page' # Catch all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

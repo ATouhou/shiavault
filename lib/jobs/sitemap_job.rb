@@ -8,6 +8,10 @@ class SitemapJob
     SitemapGenerator::Sitemap.public_path = 'tmp/'
     SitemapGenerator::Sitemap.default_host = I18n.t(:url)
     SitemapGenerator::Sitemap.create do
+      %w(about contribute).each do |page|
+        add page_path(page)
+      end
+
       BookSearch.new.all.each do |book|
         add book_path(book)
       end

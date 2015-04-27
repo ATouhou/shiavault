@@ -1,16 +1,13 @@
 - content_for(:title, html_title(@chapter.title))
 
-.container
-  = render 'shared/header'
+article.chapter
+  = @chapter.html_body
 
-  article.chapter
-    = @chapter.html_body
+  .chapter-navigation
+    .chapter-navigation__previous
+      = @chapter.previous_chapter_link(@book)
+    .chapter-navigation__next
+      = @chapter.next_chapter_link(@book)
 
-    .chapter-navigation
-      .chapter-navigation__previous
-        = @chapter.previous_chapter_link(@book)
-      .chapter-navigation__next
-        = @chapter.next_chapter_link(@book)
-
-  .comments
-    = render 'shared/disqus'
+.comments
+  = render 'shared/disqus'

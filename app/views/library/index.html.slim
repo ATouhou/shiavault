@@ -13,11 +13,11 @@
 
     ul.homepage__links
       li
-        a About
+        = link_to 'About', page_path(id: 'about')
       li
-        a Contribute
+        = link_to 'Contribute', page_path(id: 'contribute')
       li
-        a Github
+        = link_to 'Github', 'https://github.com/shiavault'
 
   .homepage__right
     .search

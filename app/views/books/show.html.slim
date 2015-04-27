@@ -1,26 +1,23 @@
 - content_for(:title, html_title(@book.title))
 
-.container
-  = render 'shared/header'
+.book
+  header.book-header
+    h1.title= @book.title
+    - if @book.subtitle.present?
+      h2.subtitle= @book.subtitle
 
-  .book
-    header.book-header
-      h1.title= @book.title
-      - if @book.subtitle.present?
-        h2.subtitle= @book.subtitle
+  = render partial: 'shared/downloads', locals: { ebook: @book }
 
-    = render partial: 'shared/downloads', locals: { ebook: @book }
+  .description
+    = @book.html_description
 
-    .description
-      = @book.html_description
+  - message = support_source_message(@book.source)
+  - if message.present?
+    .book__source= message
 
-    - message = support_source_message(@book.source)
-    - if message.present?
-      .book__source= message
+  ol.chapters
+    - @book.chapters.each do |chapter|
+      li.chapters__chapter= link_to chapter.title, book_chapter_path(@book, chapter)
 
-    ol.chapters
-      - @book.chapters.each do |chapter|
-        li.chapters__chapter= link_to chapter.title, book_chapter_path(@book, chapter)
-
-  .comments
-    = render 'shared/disqus'
+.comments
+  = render 'shared/disqus'

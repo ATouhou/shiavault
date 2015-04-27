@@ -5,6 +5,10 @@
 .container {
   @include grid-row();
   max-width: 37.5em;
+
+  .full-space {
+    @include grid-column(12);
+  }
 }
 
 .lg-container {
@@ -31,17 +35,13 @@
   padding-top: 1rem;
 }
 
-footer {
-  @extend .container;
-}
-
 .footer {
   @include grid-column(12);
 
   .copyright {
     border-top: 1px solid #E4E5E9;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 

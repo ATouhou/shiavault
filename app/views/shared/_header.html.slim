@@ -4,6 +4,6 @@ header.header
   .header__navigation
     ul
       li
-        a[href='#'] About
+        = link_to 'About', page_path(id: 'about')
       li
-        a[href='#'] Contribute
+        = link_to 'Contribute', page_path(id: 'contribute')
