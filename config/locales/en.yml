@@ -25,4 +25,18 @@ en:
   meta_description: >
     Shiavault holds a variety of Shia Islamic books for online reading and in e-reader formats (epub/mobi)
     to the benefit of Muslims and non-Muslims.
+  description: Shiavault holds a variety of Shia Islamic books for online reading and
+               in e-reader formats (epub/mobi) to the benefit of Muslims and non-Muslims.
+  beta_notification: Shaivault.com is in beta and under active development! Please keep in mind books may not be
+                     in their cleanest state, and that bugs may exist. Thank you!
+
+  name: Shiavault
   title: Shiavault
+  pages:
+    about: About
+    contribute: Contribute
+  search:
+    placeholder: Search for books...
+  downloads:
+    epub: Epub (E-Readers)
+    mobi: Mobi (Kindle)

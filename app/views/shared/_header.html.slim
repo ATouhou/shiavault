@@ -1,9 +1,9 @@
 header.header
   .header__logo
-    = link_to 'Shiavault', root_path
+    = link_to t(:name), root_path
   .header__navigation
     ul
       li
-        = link_to 'About', page_path(id: 'about')
+        = link_to t('pages.about'), page_path(id: 'about')
       li
-        = link_to 'Contribute', page_path(id: 'contribute')
+        = link_to t('pages.contribute'), page_path(id: 'contribute')
