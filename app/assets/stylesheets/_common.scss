@@ -16,8 +16,6 @@
 }
 
 .article, .chapter {
-  @include grid-column(12);
-
   h1 {
     padding: 0 0 1rem;
     border-bottom: 1px solid #E4E5E9;
@@ -42,6 +40,7 @@
     border-top: 1px solid #E4E5E9;
     text-align: center;
     padding: 1rem;
+    font-size: 14px;
   }
 }
 
@@ -63,10 +62,8 @@
 }
 
 .book, .article {
-  @include grid-column(12);
-
   &__source {
-    @include alert($bg: $info-color);
+    @include alert($bg: $secondary-color);
   }
 }
 
