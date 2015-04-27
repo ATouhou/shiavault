@@ -1,23 +1,9 @@
-doctype html
-html lang="en"
-  head
-    meta charset="utf-8"
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+- content_for :content do
 
-    title == content_for?(:title) ? yield(:title) : t(:home_title)
-    =meta_description
+  .container
+    = render 'shared/header'
+    .full-space
+      == yield.force_encoding 'UTF-8'
+    = render 'shared/footer'
 
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "vendor/modernizr"
-    = csrf_meta_tag
-
-  body
-
-    .container
-      = render 'shared/header'
-      .full-space
-        == yield.force_encoding 'UTF-8'
-      = render 'shared/footer'
-
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
-    = render 'shared/analytics'
+= render template: 'layouts/minimal'

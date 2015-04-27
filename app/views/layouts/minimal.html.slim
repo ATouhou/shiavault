@@ -13,7 +13,7 @@ html lang="en"
 
   body
 
-    == yield.force_encoding 'UTF-8'
+    == (content_for?(:content) ? yield(:content) : yield).force_encoding 'UTF-8'
 
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = render 'shared/analytics'
