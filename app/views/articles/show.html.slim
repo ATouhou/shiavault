@@ -1,6 +1,8 @@
 - content_for(:title, html_title(@article.title))
 
 .container
+  = render 'shared/header'
+
   article.article
     = render partial: 'shared/downloads', locals: { ebook: @article }
 

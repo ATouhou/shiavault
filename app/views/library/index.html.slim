@@ -1,32 +1,44 @@
 - content_for(:meta_description) { t(:meta_description).strip }
 
-.lg-container
-
-  header.header
-    h1 Books
+.homepage
+  .homepage__left
+    h1 Shiavault
+    p.homepage__description
+      | Shiavault holds a variety of Shia Islamic books for online reading and
+      | in e-reader formats (epub/mobi) to the benefit of Muslims and non-Muslims.
 
     p.global-notification
       | Shaivault.com is in beta and under active development! Please keep in mind books may not be in their
       | cleanest state, and that bugs may exist. Thank you!
 
-.lg-container
-  .search
-    = search_field_tag 'search', nil, placeholder: 'Search for books...'
+    ul.homepage__links
+      li
+        a About
+      li
+        a Contribute
+      li
+        a Github
 
-.list.lg-container
-  - @books.each do |book|
-    .list__row.list__book
-      .list__title
-        = link_to book.title, book_path(book)
+  .homepage__right
+    .search
+      = search_field_tag 'search', nil, placeholder: 'Search for books...'
 
--# TODO: Disable displaying articles until MVP of books is established
-- unless Rails.env.production? || @articles.empty?
-  .lg-container
-    header.header
-      h1 Articles
+    .list
+      - @books.each do |book|
+        .list__row.list__book
+          .list__title
+            = link_to book.title, book_path(book)
 
-  .list.lg-container
-    - @articles.each do |article|
-      .list__row.list__article
-        .list__title
-          = link_to article.title, article_path(article)
+    -# TODO: Disable displaying articles until MVP of books is established
+    - unless Rails.env.production? || @articles.empty?
+      .lg-container
+        header.header
+          h1 Articles
+
+      .list
+        - @articles.each do |article|
+          .list__row.list__article
+            .list__title
+              = link_to article.title, article_path(article)
+
+

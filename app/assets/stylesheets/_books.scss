@@ -1,0 +1,38 @@
+.book-header {
+  text-align: center;
+  
+  .title {
+    padding: 0 0 1rem;
+  }
+  .subtitle {
+    padding: 0 0 1rem;
+    color: #666666;
+    font-size: 1.5rem
+  }
+}
+
+.chapters {
+  margin-left: 2rem;
+
+  .chapters__chapter {
+    padding-left: 0;
+  }
+}
+
+
+.chapter-navigation {
+  @include grid-row();
+
+  &__next, &__previous {
+    @include grid-column(6, $collapse: true);
+    min-height: 1px; // Allows width to kick in
+
+    a {
+      @include button($padding: $button-sml);
+    }
+  }
+
+  &__next {
+    text-align: right;
+  }
+}

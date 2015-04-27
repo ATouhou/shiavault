@@ -1,0 +1,75 @@
+.hidden {
+  display:none;
+}
+
+.container {
+  @include grid-row();
+  max-width: 37.5em;
+}
+
+.lg-container {
+  @include grid-row();
+}
+
+.article, .chapter {
+  @include grid-column(12);
+
+  h1 {
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #E4E5E9;
+    margin-bottom: 1rem;
+  }
+}
+
+.list {
+  margin-bottom: 2rem;
+}
+
+.comments {
+  @include grid-column(12);
+
+  padding-top: 1rem;
+}
+
+footer {
+  @extend .container;
+}
+
+.footer {
+  @include grid-column(12);
+
+  .copyright {
+    border-top: 1px solid #E4E5E9;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+.downloads {
+  @include button-group-container();
+
+  .mobi {
+    @include button($padding: $button-sml, $bg: $secondary-color);
+  }
+
+  .epub {
+    @include button($padding: $button-sml);
+  }
+
+  & > a {
+    @include button-group-style($radius: 4, $even: 2);
+    white-space: nowrap;
+  }
+}
+
+.book, .article {
+  @include grid-column(12);
+
+  &__source {
+    @include alert($bg: $info-color);
+  }
+}
+
+.global-notification {
+  @include alert($bg: $warning-color)
+}

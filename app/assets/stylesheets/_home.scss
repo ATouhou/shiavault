@@ -1,0 +1,70 @@
+.homepage {
+  $boundary: $medium-up;
+  padding-top: 3rem;
+
+  @include grid-row();
+
+  &__left {
+    text-align: center;
+    @include grid-column(12);
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+    @media #{$boundary} {
+      @include grid-column(4);
+      h1 {
+        font-size: 2.75rem;
+      }
+    }
+  }
+
+  &__right {
+    @include grid-column(12);
+
+    @media #{$boundary} {
+      @include grid-column(8);
+      padding-left: 2rem;
+    }
+  }
+
+  &__links {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      font-weight: bold;
+      display: inline;
+    }
+
+    a {
+      color: grey;
+      padding: 0 0.5rem;
+
+    }
+
+    @media #{$boundary} {
+      li {
+        border: 0;
+        width: 100%;
+        padding: 0;
+        display: block;
+      }
+
+      a {
+        border: 0;
+      }
+    }
+
+  }
+}
+
+.search {
+  input[type="search"] {
+    @include form-element;
+  }
+}

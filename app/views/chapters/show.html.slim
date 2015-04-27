@@ -1,6 +1,8 @@
 - content_for(:title, html_title(@chapter.title))
 
 .container
+  = render 'shared/header'
+
   article.chapter
     = @chapter.html_body
 
