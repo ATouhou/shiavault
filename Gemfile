@@ -45,6 +45,8 @@ gem 'actionview-encoded_mail_to'
 gem 'sitemap_generator'
 gem 'fog', '~> 1.29'
 
+gem 'font-awesome-sass'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

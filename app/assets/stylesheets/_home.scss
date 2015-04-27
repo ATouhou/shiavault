@@ -68,3 +68,12 @@
     @include form-element;
   }
 }
+
+.list {
+  margin-bottom: 2rem;
+
+  &__row i {
+    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+  }
+}

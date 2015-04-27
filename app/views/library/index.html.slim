@@ -23,6 +23,7 @@
       - @books.each do |book|
         .list__row.list__book
           .list__title
+            i.fa.fa-book
             = link_to book.title, book_path(book)
 
     -# TODO: Disable displaying articles until MVP of books is established
