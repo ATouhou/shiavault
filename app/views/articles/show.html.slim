@@ -1,7 +1,7 @@
 - content_for(:title, html_title(@article.title))
 
 article.article
-  = render partial: 'shared/downloads', locals: { ebook: @article }
+  /= render partial: 'shared/downloads', locals: { ebook: @article }
 
   - message = support_source_message(@article.source)
   - if message.present?

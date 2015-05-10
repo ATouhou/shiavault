@@ -32,12 +32,4 @@ class Book
     end
   end
 
-  def epub_url
-    EbookService.new.public_url("ebooks/books/#{slug}.epub") if slug.present?
-  end
-
-  def mobi_url
-    EbookService.new.public_url("ebooks/books/#{slug}.mobi") if slug.present?
-  end
-
 end

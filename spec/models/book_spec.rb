@@ -27,22 +27,4 @@ describe Book do
     chapter = book.find_chapter(:slug, chapters.second.slug)
     expect(chapter).to eq(chapters.second)
   end
-
-  it '#epub_url' do
-    url = book.epub_url
-    expect(url).to match(URI::regexp)
-    expect(url).to end_with("ebooks/books/#{book.slug}.epub")
-  end
-
-  it '#mobi_url' do
-    url = book.mobi_url
-    expect(url).to match(URI::regexp)
-    expect(url).to end_with("ebooks/books/#{book.slug}.mobi")
-  end
-
-  it 'return nil if no ebook' do
-    book.slug = nil
-    expect(book.epub_url).to be_nil
-    expect(book.mobi_url).to be_nil
-  end
 end

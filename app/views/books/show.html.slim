@@ -6,7 +6,7 @@
     - if @book.subtitle.present?
       h2.subtitle= @book.subtitle
 
-  = render partial: 'shared/downloads', locals: { ebook: @book }
+  = render partial: 'downloads', locals: { ebook: @book }
 
   .description
     = @book.html_description
