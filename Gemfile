@@ -47,6 +47,7 @@ gem 'fog', '~> 1.29'
 
 gem 'rollbar'
 gem 'gabba'
+gem 'lograge'
 
 group :development, :test do
   gem 'rspec-rails'
