@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :articles, only: [:show]
   resources :books, only: [:show] do
     resources :chapters, only: [:show]
+    member do
+      get 'download'
+    end
   end
 
   get '/sitemap.xml', :to => 'seo#sitemap', :defaults => { :format => 'xml' }
