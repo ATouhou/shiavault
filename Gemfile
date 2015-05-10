@@ -46,6 +46,7 @@ gem 'sitemap_generator'
 gem 'fog', '~> 1.29'
 
 gem 'rollbar'
+gem 'gabba'
 
 group :development, :test do
   gem 'rspec-rails'

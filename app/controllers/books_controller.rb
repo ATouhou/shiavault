@@ -11,7 +11,9 @@ class BooksController < ApplicationController
     slug = download_params[:slug]
     return head 400 if slug.include?('/')
 
-    redirect_to EbookService.new.public_url("ebooks/books/#{slug}.#{format}")
+    file = "#{slug}.#{format}"
+    track_event('Download', 'Ebook', file)
+    redirect_to EbookService.new.public_url("ebooks/books/#{file}")
   end
 
   private
