@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     return head 400 if slug.include?('/')
 
     file = "#{slug}.#{format}"
-    track_event('Download', 'Ebook', file)
+    track_event(category: 'ebook', action: 'download', label: file)
     redirect_to EbookService.new.public_url("ebooks/books/#{file}")
   end
 

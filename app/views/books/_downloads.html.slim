@@ -1,3 +1,3 @@
 .downloads
-  = link_to t('downloads.epub'), download_book_path(ebook, format: :epub), class: 'epub'
-  = link_to t('downloads.mobi'), download_book_path(ebook, format: :mobi), class: 'mobi'
+  = link_to t('downloads.epub'), download_book_path(ebook, format: :epub), class: 'epub', rel: 'nofollow'
+  = link_to t('downloads.mobi'), download_book_path(ebook, format: :mobi), class: 'mobi', rel: 'nofollow'

@@ -46,7 +46,7 @@ gem 'sitemap_generator'
 gem 'fog', '~> 1.29'
 
 gem 'rollbar'
-gem 'gabba'
+gem 'rest-client'
 gem 'lograge'
 
 group :development, :test do

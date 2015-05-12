@@ -5,8 +5,21 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def track_event(*args)
-    return unless Rails.env.production?
-    Gabba::Gabba.new('UA-61814862-1', 'shiavault.com').event(*args)
+  def track_event(category:, action:, label:, value: nil)
+    # return unless Rails.env.production?
+
+    options = {
+      v: 1,
+      tid: 'UA-61814862-1',
+      cid: cookies[:_ga],
+      t: 'event',
+      ec: category,
+      ea: action,
+      el: label,
+      ev: value
+    }.compact
+
+    RestClient.post('http://www.google-analytics.com/collect', options)
   end
+
 end
