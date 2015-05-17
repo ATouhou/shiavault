@@ -1,8 +1,3 @@
-# Copy example files first
-if ENV['RACK_ENV'] != 'development'
-  `cp config/secrets.yml.example config/secrets.yml`
-end
-
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['MAX_THREADS'] || 1)
 threads threads_count, threads_count
