@@ -20,6 +20,12 @@ class ArticleSearch
     Article.new(article_params(article_metadata))
   end
 
+  def find!(id)
+    book = find(id)
+    fail ActiveRecord::RecordNotFound unless book
+    book
+  end
+
   private
 
   def article_params(metadata)

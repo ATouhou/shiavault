@@ -18,6 +18,10 @@ xdescribe ArticleSearch do
     expect(article.body).to_not be_empty
   end
 
+  it '#finds!' do
+    expect { described_class.new.find!('completely-fake') }.to raise_error(ActiveRecord::RecordNotFound)
+  end
+
   it 'find returns nil if non-existing' do
     article = described_class.new.find('oogy-boogy')
     expect(article).to be_nil

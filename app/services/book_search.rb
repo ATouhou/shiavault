@@ -23,6 +23,12 @@ class BookSearch
     )
   end
 
+  def find!(id)
+    book = find(id)
+    fail ActiveRecord::RecordNotFound unless book
+    book
+  end
+
   private
 
   def chapters(metadata)
