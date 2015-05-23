@@ -52,6 +52,8 @@ gem 'rollbar'
 gem 'rest-client'
 gem 'lograge'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
